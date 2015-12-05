@@ -1,8 +1,3 @@
-restorecon -R -v ~/.ssh
+chmod 600 ./deploy_key
 
-echo $DEPLOY_KEY | sed 's/\\n/\n/g' > ~/.ssh/sshDeployKey
-chmod 600 ~/.ssh/sshDeployKey
-
-cat ~/.ssh/sshDeployKey
-
-ssh-agent echo "ssh-add ~/.ssh/sshDeployKey ; scp -v -i ~/.ssh/sshDeployKey -r $(pwd) alphabot@vps1.cattermole.co.nz:~/" | bash
+ssh-agent echo "ssh-add ./deploy_key ; scp -v -i ./deploy_key -r $(pwd) alphabot@vps1.cattermole.co.nz:~/" | bash

@@ -5,6 +5,8 @@ addons:
 matrix:
   include:
     - d: dmd-2.069.2
+before_install:
+  - openssl aes-256-cbc -K $encrypted_8e44accaed0a_key -iv $encrypted_8e44accaed0a_iv -in deploy_key.enc -out deploy_key -d
 script:
   - dub build streameradminbot:main --compiler=${DC} --build=release
 before_deploy:
