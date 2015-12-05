@@ -1,3 +1,5 @@
+restorecon -R -v ~/.ssh
+
 echo $DEPLOY_KEY > ~/.ssh/sshDeployKey
 chmod 600 ~/.ssh/sshDeployKey
 
