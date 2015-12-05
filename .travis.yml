@@ -8,6 +8,7 @@ script:
   - dub build streameradminbot:main --compiler=${DC} --build=release
 after_success:
   - dub run knocker -- vps1.cattermole.co.nz & echo "Deployed"
+  - scp --help
 env:
   global:
     secure: H97ecdfeCEyPc8N01PLFNBizEdPp242GKduxRhYuKFP4Yl5LqFwxdwpP/holO15HWlNIokuS4Cb05vIb1Opv4vf/yrmiTFei5AvolS68VPPygVZID0Dn/oRF3+XMvihoqYzSreeykLXBjux1itwlhoAw1iAHjraApXWTwJIgiPGy4ZngP/d/wNGReK5j1fL7c9nG0lHPmoUxsOWgdFY83Unq74DezTuFGIoLbYWfDNhhdbO91dAGkF/h2oTALTisjxPuszXlosBSIhviH8sr+57adO2hseMP2MqBsA9HnslfXmlqJH1VSbi6vsjJ0HctbaoKffvztMA4KhBLgWRXD7ONzjkuPul9jD5MY3GS/QshhfjPt0DkbiPo6j7vq278rJkkOzbHOKBXqxJ74SQgRFELM55xsznysVfQB9Uxm820Ugd6wr7E7AOlcwOTh4vt0o0sQ2QA3aSbtlPI7NEnK3ELngfAKH6qqsmA2teZjCjule1Bsg+aqPnQdht4NNO3Xnn8Cye0fi3z2UtoJQaUuXSTLtKiieTrxCxf+vpYgxGQBoySa0qqK7ldtzzXZJXnl2vCkfJuRUawmJSwMCMjat7eQChm2x2j4FWnu6WitPYoiYzTipN+JBofhk9ODqYnPhg3GhuO8lbHPWMLWKlKsCFVaXpyrztESE6dHtZ3BJU=
