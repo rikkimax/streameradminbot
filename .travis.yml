@@ -1,7 +1,4 @@
 language: d
-addons:
-  ssh_known_hosts:
-    - vps1.cattermole.co.nz
 matrix:
   include:
     - d: dmd-2.069.2
