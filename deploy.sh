@@ -1,7 +1,13 @@
 echo $DEPLOY_KEY > ~/.ssh/sshDeployKey
 chmod 600 ~/.ssh/sshDeployKey
 
+echo "Adding cert"
+
 ssh-agent bash
 ssh-add ~/.ssh/sshDeployKey
 
-scp -i ~/.ssh/sshDeployKey -r $(pwd) alphabot@vps1.cattermole.co.nz:~/
+echo "Pre SCP copying"
+
+scp -r $(pwd) alphabot@vps1.cattermole.co.nz:~/
+
+echo "Post SCP copying"
