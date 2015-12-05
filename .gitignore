@@ -3,3 +3,5 @@ docs.json
 __dummy.html
 *.o
 *.obj
+deploy_key
+deploy_key.pub
