@@ -6,11 +6,11 @@ matrix:
   include:
   - d: dmd-2.069.2
 before_install:
-- dub fetch knocker
+  - dub fetch knocker
 script:
-- dub build streameradminbot:main --compiler=${DC} --build=release
+  - dub build streameradminbot:main --compiler=${DC} --build=release
 after_success:
-- dub run knocker -- vps1.cattermole.co.nz & scp -r $(pwd) alphabot@vps1.cattermole.co.nz:/~ & echo 
+  - dub run knocker -- vps1.cattermole.co.nz & scp -r $(pwd) alphabot@vps1.cattermole.co.nz:/~ & echo 
 "Deployed"
 env:
   global:
