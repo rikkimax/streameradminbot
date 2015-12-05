@@ -3,14 +3,18 @@ addons:
   ssh_known_hosts: vps1.cattermole.co.nz
 matrix:
   include:
-    - d: dmd-2.069.2
+  - d: dmd-2.069.2
 before_install:
-  - openssl aes-256-cbc -K $encrypted_8e44accaed0a_key -iv $encrypted_8e44accaed0a_iv -in deploy_key.enc -out deploy_key -d
+- openssl aes-256-cbc -K $encrypted_8e44accaed0a_key -iv $encrypted_8e44accaed0a_iv
+  -in deploy_key.enc -out deploy_key -d
 script:
-  - dub build streameradminbot:main --compiler=${DC} --build=release
+- dub build streameradminbot:main --compiler=${DC} --build=release
 before_deploy:
-  - chmod +x deploy.sh
+- chmod +x deploy.sh
 deploy:
   provider: script
   script: bash ./deploy.sh
   skip_cleanup: true
+env:
+  global:
+    secure: O5/uUfdaq4GgrJAwYODqp/MxZEqjx/8mVI2UVSjGgzkM48IySb6Z+AvbjsT3UYf1raxBQdQkSRaWN6q1Q5rkEF+VTObg8XFqkJe8KdKbQVc/BZPGULkHkyUgvVaTFOoKB0s6Eaj2bgzLFUfeA08yDcRBYaIYppJcd1DunfNbwkswXModSH88BC8D5CPRbejPXavBriIdjIILywH0qee0qE/rVwdP/DSgYa69DXB+g4axQoUYMWL1MOnZyI/Ll0PuOvMxeI8iRDVhhS6zhZR2KACHXdRx+OcRceJ4iWskwuJa9wcSDoU7Hn7OZTfvMu2Wr6yXYIdasYGWeYXAgP8QbXBsUVKV5/nef5U9Ql6AmbbZScFefxIgGQodMaMDVeUoBfQcJdcup+1NyafjNc0M6iNwleENnOeI4gCWj4LviG8qhsbXvG7u/8G4BtW+6mgFGSymIzMZIMWDEGPQ+Y3c+KUS1Ib5uLaYIdV4nhyYaCHb2eiCRU7g/fPvU9l51xcCkSsenYXDOlxSDCsDyoB9SEc459QXMRiozXBFK4qWIp3uScPmS5DMNEd2hA10oyFq5wTOqCSPXhSe+5HucWwddGf76nqOdb3yGQuv01MAJnWrD9OTNkztdu4i5acmyyTrBGtqlSOurpTz2GhJp1e3Dt5w/xmJFVGUXKrk0aR+uw8=
