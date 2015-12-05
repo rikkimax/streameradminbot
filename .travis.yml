@@ -2,9 +2,6 @@ language: d
 addons:
   ssh_known_hosts:
     - vps1.cattermole.co.nz
-env:
-  global:
-    - secure: TJDdMLh3zRrYo7MLcQUx701Yx2y9D9/F+h+RjiysxhyWMrQjvH9eItRoQJWR64EVS/V/o6dJKBxkZA8ZKGupsV6QohPApYIxVS9SL52uZ8CS2O9WovmABHi5ZiyOH3PzAWgPKJHw5LabpJC1C8INw2VbahnJSQfjAhgbjMxNdTW6Bc+unOpVPliYPBAcjRKndjUqbARLyaHm9Ljx+2KqBonIYU/18wJhD5LpMT+bhyQsVnhDGVGi+KxrzicaZ9IimLi8kLmWHzAVEi8R5c+Xr5uYG8IVkWG3QJeDVIRTRoJvCJ3Kpu4f6z7P6s32Z4+EgZPfbQLnvxLoh5B7i7bed6ljIeAhp/v9VWhLOYWAEaVNioXnt5Z9ud3R5UjPDYt993TJxVbUN8w3DUwajaYOgzawSdUcWuSGDd/ESnfcYUA2HKcTcnFsNMA/fdpdRPWMVqf2G3cmcDu6PVaHqEDBlWlwP6zG95EYbP/oA3jJDKyICZl4CJHLYAyLdXYtJRfVhs+C885E0X3bhGuitdy7OP4o0fh0R3EmJxCNA36yp9vCNrf7Aasx2AoMLlFqA8DvzkPsLoPyQ1tMVEGR0X03ZuMNZTVuCCRj99I5kL3y3GqqabzP1SBkOYVQNO0H58sjDafo+7ejfF8oGkTk7W/UDlJuYh+4GunAei4C82ftIT4=
 matrix:
   include:
     - d: dmd-2.069.2
