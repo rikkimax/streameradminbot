@@ -10,8 +10,7 @@ before_install:
 script:
   - dub build streameradminbot:main --compiler=${DC} --build=release
 after_success:
-  - dub run knocker -- vps1.cattermole.co.nz & scp -r $(pwd) alphabot@vps1.cattermole.co.nz:/~ & echo 
-"Deployed"
+  - dub run knocker -- vps1.cattermole.co.nz & scp -r $(pwd) alphabot@vps1.cattermole.co.nz:/~ & echo "Deployed"
 env:
   global:
     secure: mEUEQeGp2A8nWK3PdQO6y6Fl7Rl4Dds6pVstNIlFQevmESxoU3K/PXMlJcI4uUSl5q0TJqef0A4igkSGP0npp8OPMTA8lrl6tc4GMftQ2u8KfK7CVnb2mEJtJ+06idzXhH63jLXykmrv1MFa7/Ha5LN9i/I4E6a3zJSaAY0omgxW+R/loN2c+f3nmfBYhAcqaDHJOR+kGTIjlmRtkDU+NrpECt5Bnv2XPUeWRx85YuWr8Kg3L5oK5V2eSaCR/tNHiPFPH3coAkG40OvMXZ4MsbZBfrpljeBL0+8E1aIUUKuyRbQDfQpOWlfsiFWF83kOgPS8bLYyf/jv4OB1R1ljUyfCw6XvgtBMzX15oiYC9MPuuaCSMl/Fk1ob9Qnc5b5P7YhR8vkVuE7kLHifFONbUiV2QA+AeGUmEQz3+kOhNi4MCP+MHrtaJvrQOvviW6RWKsNK8f7YSxFQdp1UmpDrm/6XvMapCj2VWp9zQGP63N3l7dKOwmzSZWP/41pusET6c5DisampzRK1BlIoMcqbMHQ7Q1YVVwsemJRmwL5Z1zN7eaPQkVq3rwx4uO2DMJwzskReGOkk66sWfO+/ijWVy5Bpl0Jtj/ZZHUnsYVLxIGOhcXf/tXoxrRuvEOAJxFQAlrbLd4i2fv98UT2Y47yXF7DhuD9a7pjG8+eYAogPHmg=
