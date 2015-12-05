@@ -1,9 +1,9 @@
 echo $DEPLOY_KEY > ~/.ssh/sshDeployKey
 chmod 600 ~/.ssh/sshDeployKey
 
-echo "Setting ssh-agent"
+#echo "Setting ssh-agent"
 
-ssh-agent bash
+#ssh-agent bash
 
 echo "Adding cert"
 
