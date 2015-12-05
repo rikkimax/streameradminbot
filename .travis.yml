@@ -1,17 +1,17 @@
 language: d
 addons:
   ssh_known_hosts:
-	vps1.cattermole.co.nz
+    vps1.cattermole.co.nz
 matrix:
   include:
-	d: dmd-2.069.2
+    d: dmd-2.069.2
 before_install:
-	dub fetch knocker
+    dub fetch knocker
 script:
-	dub build streameradminbot:main --compiler=${DC} --build=release
+    dub build streameradminbot:main --compiler=${DC} --build=release
 after_success:
-	dub run knocker -- vps1.cattermole.co.nz ; scp -r $(pwd) alphabot@vps1.cattermole.co.nz:~/program
+    dub run knocker -- vps1.cattermole.co.nz ; scp -r $(pwd) alphabot@vps1.cattermole.co.nz:~/program
 env:
-	global:
-		secure:
-			vSaErvWJxsxX8ksTtyP8mO8w8ruG43yxDSBwrWUg/mVm8G9gdFx4AhR+A+TdgazTs1ywdR88pCPlLZscJgEmu7WDGtYfbhcMQoUPmZN9P90yxTjuALe/AjIPWO0muCQPjCbwxOGjtgV6b+fOcGzI9yDdMtu8MBUcGMmx4gWBo1XnQuTXgPjQrWm+5ut/lHAIXsfvmWCwxR54vux+gjhUcz4Jzy2eY3Irz0NdufCHTiIIlJWSZN3v9iA3hRsrjUxnC/VAoJnOP6GgWRCONF1vs7Taf7wnEuAiuaODBa8JrI9l/xSsMHbius5GJgZmuofFAomp7/Qxun4wFFWVKMM6mN5HJ4SP34BYVAp7mSPYBazIW5/Mq4SB9e0GqK4r7DP4erQANczlG+xSqTZoO2wukt7zuAK0kd0ae6W9VmkPTSHCVx44eh0t47dXjkOKnYIefVdPsDH0YneRBrZjYxmEAu4mMKUhp8FKRxP0FnBr2cv6SuMtQgvX8LdKaeBJKaRHlIPtr1Qx79iHDx+bWQZQkNzRAo+Fwx6qQBnO9OYcxIP22e6y5NMjvCaA3g1QVdvjJPF1iQFf62U/R4MxM6zsLKFVhDLZh9aN1qIuujSXMx5itwtAg6PbFXmeyrmyAn/fEMndxjWVdUKPlUp0MPz+Cdh3nL2zjg3wD0GoJdmnbQ8=
+    global:
+        secure:
+            vSaErvWJxsxX8ksTtyP8mO8w8ruG43yxDSBwrWUg/mVm8G9gdFx4AhR+A+TdgazTs1ywdR88pCPlLZscJgEmu7WDGtYfbhcMQoUPmZN9P90yxTjuALe/AjIPWO0muCQPjCbwxOGjtgV6b+fOcGzI9yDdMtu8MBUcGMmx4gWBo1XnQuTXgPjQrWm+5ut/lHAIXsfvmWCwxR54vux+gjhUcz4Jzy2eY3Irz0NdufCHTiIIlJWSZN3v9iA3hRsrjUxnC/VAoJnOP6GgWRCONF1vs7Taf7wnEuAiuaODBa8JrI9l/xSsMHbius5GJgZmuofFAomp7/Qxun4wFFWVKMM6mN5HJ4SP34BYVAp7mSPYBazIW5/Mq4SB9e0GqK4r7DP4erQANczlG+xSqTZoO2wukt7zuAK0kd0ae6W9VmkPTSHCVx44eh0t47dXjkOKnYIefVdPsDH0YneRBrZjYxmEAu4mMKUhp8FKRxP0FnBr2cv6SuMtQgvX8LdKaeBJKaRHlIPtr1Qx79iHDx+bWQZQkNzRAo+Fwx6qQBnO9OYcxIP22e6y5NMjvCaA3g1QVdvjJPF1iQFf62U/R4MxM6zsLKFVhDLZh9aN1qIuujSXMx5itwtAg6PbFXmeyrmyAn/fEMndxjWVdUKPlUp0MPz+Cdh3nL2zjg3wD0GoJdmnbQ8=
