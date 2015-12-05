@@ -1,0 +1,6 @@
+language: d
+matrix:
+    include:
+        - d: dmd-2.069.2
+script:
+    dub build streameradminbot:main --compiler=${DC}

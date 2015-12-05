@@ -3,6 +3,12 @@
 	"description": "A minimal D application.",
 	"copyright": "Copyright © 2015, rikki",
 	"authors": ["rikki"],
-	"dependencies": {
-	}
+	"targetType": "none",
+	"subPackages": [
+		{
+			"name": "main",
+			"sourcePaths": ["source/main"],
+			"targetType": "executable"
+		}
+	]
 }
