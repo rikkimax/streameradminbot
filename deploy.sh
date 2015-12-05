@@ -3,7 +3,7 @@ chmod 600 ~/.ssh/sshDeployKey
 
 echo "Adding cert"
 
-ssh-agent bash
+ssh-agent "bash"
 ssh-add ~/.ssh/sshDeployKey
 
 echo "Pre SCP copying"
