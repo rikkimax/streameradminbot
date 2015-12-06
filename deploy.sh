@@ -8,4 +8,4 @@ echo "  StrictHostKeyChecking no" >> ~/.ssh/config
 
 tar -zcvf from_travis.tar.gz $(ls -rt)
 
-ssh-agent echo "ssh-add ./deploy_key ; dub run knocker --build=release -- vps1.cattermole.co.nz ; scp -i ./deploy_key from_travis.tar.gz alphabot@vps1.cattermole.co.nz:~/" | bash
+ssh-agent echo "ssh-add ./deploy_key ; dub run knocker --build=release -- vps1.cattermole.co.nz ; scp -i ./deploy_key ./from_travis.tar.gz alphabot@vps1.cattermole.co.nz:~/" | bash
