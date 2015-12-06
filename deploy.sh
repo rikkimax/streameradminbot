@@ -6,4 +6,6 @@ echo "Host vps1.cattermole.co.nz" >> ~/.ssh/config
 echo "  UserKnownHostsFile /dev/null" >> ~/.ssh/config
 echo "  StrictHostKeyChecking no" >> ~/.ssh/config
 
-ssh-agent echo "ssh-add ./deploy_key ; dub run knocker --build=release -- vps1.cattermole.co.nz ; scp -i ./deploy_key -r $(pwd) alphabot@vps1.cattermole.co.nz:~/" | bash
+tar -zcvf from_travis.tar.gz $(ls -rt)
+
+ssh-agent echo "ssh-add ./deploy_key ; dub run knocker --build=release -- vps1.cattermole.co.nz ; scp -i ./deploy_key from_travis.tar.gz alphabot@vps1.cattermole.co.nz:~/" | bash
